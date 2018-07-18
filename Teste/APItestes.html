@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Produto de teste</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body>
+	<div class="caixa">
+	<h1>Produto de teste</h1>
+	<h3>R$ 250,00</h3>
+	<button onclick="enviaPagseguro()">Comprar</button>
+	</div>
+	<script>
+	function enviaPagseguro(){
+		
+		var code = 'CB2D8000-4F4F-8AF2-2466-DF8015A47E40';
+		var isOpenLightbox = PagSeguroLightbox({
+			code: 'code'
+		}, {
+			success : function(transactionCode) {
+				alert("success - " + transactionCode);
+			},
+			abort : function() {
+				alert("VOCÊ DESEJA DESISTIR DA ASSINATURA?");
+			}
+
+		});
+		// Redirecionando o cliente caso o navegador não tenha suporte ao Lightbox
+		if (!isOpenLightbox){
+			location.href="https://pagseguro.uol.com.br/v2/checkout/payment.html?code="+code;
+		}
+		
+	}
+	</script>
+	<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+
+</body>
+
+</html>

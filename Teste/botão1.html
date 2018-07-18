@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Teste do botão PagSeguro</title>
+	<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+   	<link rel="stylesheet" type="text/css" href="style.css">
+   	<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+</head>
+<body>
+
+<div class="caixa">
+	<h1>PagSeguro</h1>
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->	
+	<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+	<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+	<input type="hidden" name="code" value="EE73C45BBBBB2659940DAF8ECD6CD474" />
+	<input type="hidden" name="iot" value="button" />
+	<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+	</form>
+	
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+	<h3>Valor da compra: R$ 250,00</h3>
+	
+</div>
+
+
+</body>
+</html>
